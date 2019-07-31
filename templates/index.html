@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+	<title>Omers page</title>
+</head>
+<body>
+	<h1>gogoplata</h1>
+	<h2>The best submision in the world</h2>
+	<button id="bt" onclick="nick()" type="button">what do we do ?</button>
+	<img  href="https://www.youtube.com/watch?v=FR9gpJJ2qTQ" src="https://i.pinimg.com/originals/3c/7c/b3/3c7cb34a47c93f8a05dbd45d3d114c5e.jpg"  width="404" >
+	<div>
+		<a href="https://www.youtube.com/watch?v=FR9gpJJ2qTQ">Do you want to see Nick Diaz high af pull a Gogoplata in a mma fight? </a>
+	</div>
+<script>
+function myFunction() {
+  alert("In Gogoplata we trust, and your neck we will bust,");
+}
+
+function nick() {
+const swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    confirmButton: 'btn btn-success',
+    cancelButton: 'btn btn-danger'
+  },
+  buttonsStyling: false,
+})
+
+swalWithBootstrapButtons.fire({
+  title: 'Do you want to see Nick Diaz high af pull a Gogoplata in a mma fight?',
+  text: "It rocks!",
+  type: 'warning',
+  showCancelButton: true,
+  confirmButtonText: 'Yes,!',
+  
+  cancelButtonText: "No, it's too much!",
+  reverseButtons: true
+}).then((result) => {
+  if (result.value) {
+    swalWithBootstrapButtons.fire(
+    	//title: 'Here is the link',
+   //    html:
+   // '<a href="https://www.youtube.com/watch?v=FR9gpJJ2qTQ">Click me!</a> ' ,
+
+    )
+  } else if (
+    // Read more about handling dismissals
+    result.dismiss === Swal.DismissReason.cancel
+  ) {
+    swalWithBootstrapButtons.fire(
+      'Cancelled',
+      'Your imaginary file is safe :)',
+      'error'
+    )
+  }
+})
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+</body>
+</html><!-- Put the HTML template for your page here! -->
